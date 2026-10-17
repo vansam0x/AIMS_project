@@ -1,4 +1,6 @@
-package AIMS_project;
+package hust.soict.aims.cart;
+
+import hust.soict.aims.disc.DigitalVideoDisc;
 
 public class Cart {
     private static final int MAX_NUMBER_ORDERED = 20;
@@ -66,5 +68,27 @@ public class Cart {
         }
         System.out.println("Subtotal : " + calculateTotalCost() + "$");
         System.out.println("================================================================");
+    }
+
+    public boolean searchDVD(int ID) {
+        for (int i = 0; i < qtyOrdered; ++i) {
+            if(itemsInCart[i].getId() == ID) {
+                System.out.println("Found item with id " + ID + " in the cart");
+                return true;
+            }
+        }
+        System.out.println("Cannot find the item with id " + ID + " in the cart");
+        return false;
+    }
+
+    public boolean searchDVD(String title) {
+        for (int i = 0; i < qtyOrdered; ++i) {
+            if(itemsInCart[i].isMatch(title)) {
+                System.out.println("Found item with title " + title + " in the cart");
+                return true;
+            }
+        }
+        System.out.println("Cannot find the item with title " + title + " in the cart");
+        return false;
     }
 }

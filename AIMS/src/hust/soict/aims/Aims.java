@@ -1,4 +1,7 @@
-package AIMS_project;
+package hust.soict.aims;
+
+import hust.soict.aims.cart.Cart;
+import hust.soict.aims.disc.DigitalVideoDisc;
 
 public class Aims {
 
